@@ -1,5 +1,8 @@
 # MaintAI — Maintenance Failure-Mechanism Classification
 
+**Original Repo:**
+https://github.com/michaeljamesscott/P000231DS
+
 **MaintAI** is an industry capstone system that classifies unstructured **aircraft / industrial maintenance discrepancy text** into engineer-defined **failure-mechanism labels** (e.g. leaking, corroded, cracked) without requiring a large labeled training set per site.
 
 It implements an **Unsupervised Multi-class Ensemble Classifier (UMEC)** aligned with peer-reviewed research, wrapped in a **production-style web application** for upload → classify → review → export at **100k–170k+ row** scale.
