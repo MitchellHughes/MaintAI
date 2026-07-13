@@ -1,0 +1,6 @@
+project:
+  name: umec
+  random_state: 42
+  output_dir: reports
+  model_dir: models
+  log_level: INFO

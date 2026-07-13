@@ -1,0 +1,157 @@
+# User-tunable analysis settings (UI is generated from this file).
+# Virtual ids (analysis.*, umec.prediction_mode) are mapped in backend/app/services/user_settings.py.
+
+groups:
+  "Prediction output":
+    summary: >
+      Controls how labels are assigned and when a row stays unclassified. Recommended for
+      engineers: keep keyword evidence ON so predictions match words in the report; allow
+      unclassified when nothing in the text supports a label.
+  "Token matching":
+    summary: >
+      Matches your category keywords in the text (TF-IDF). Stronger when keywords are
+      specific and not shared across categories. Usually the most important base model for accuracy.
+  "Equipment-based":
+    summary: >
+      Links equipment part names (e.g. APU, wing) to failure types using prominence weights.
+      Helps when reports name parts; less useful if text rarely mentions parts.
+  "Semantic similarity":
+    summary: >
+      FastText embeddings compare text to class prototypes. Slower to train; helps paraphrases
+      and wording not in your keyword list. More epochs = better but slower.
+  "UMEC ensemble":
+    summary: >
+      Combines the three base models with ECOC decoding and optional spectral features.
+      Prior weight nudges predictions toward common classes in your upload.
+
+settings:
+  - id: analysis.require_keyword_evidence
+    label: Only predict labels with keywords in the text
+    description: >
+      ON (recommended): only assigns a label when category keywords or equipment/semantic
+      evidence appear in the text — avoids labels like "leaking" with no leak mentioned.
+      OFF: always picks the highest ensemble score (use only when evaluating against known labels).
+    type: boolean
+    group: Prediction output
+    applies_to: [TokenMatchingClassifier, EquipmentBasedClassifier, SemanticSimilarityClassifier, UMECClassifier]
+
+  - id: umec.prediction_mode
+    label: When the ensemble score is very low
+    description: >
+      "Unclassified" is for rows where no class is clearly supported. Does not apply when
+      keyword evidence mode is ON (those rows are already filtered).
+    type: choice
+    group: Prediction output
+    applies_to: [UMECClassifier]
+    options:
+      - value: predict_all
+        label: Always assign the best-scoring class (recommended for accuracy)
+      - value: allow_unclassified
+        label: Mark very weak rows as "unclassified"
+
+  - id: umec.decode.unclassified_threshold
+    label: Minimum ensemble score (unclassified cutoff)
+    description: >
+      ECOC margin score must be above this value or the row becomes "unclassified".
+      More negative = fewer unclassified rows (e.g. -8 is lenient, -4 is stricter).
+    type: number
+    group: Prediction output
+    min: -20
+    max: 0
+    step: 0.5
+    applies_to: [UMECClassifier]
+    visible_when:
+      setting: umec.prediction_mode
+      equals: allow_unclassified
+
+  - id: token_matching.ngram_range
+    label: Keyword phrase length (n-grams)
+    description: "1–1 = single words only; 1–2 also matches two-word phrases (e.g. 'oil leak')."
+    type: int_range
+    group: Token matching
+    min: 1
+    max: 5
+    applies_to: [TokenMatchingClassifier, UMECClassifier]
+
+  - id: token_matching.use_idf
+    label: Down-weight very common words (IDF)
+    description: "Usually leave ON so frequent words like 'the' do not dominate scores."
+    type: boolean
+    group: Token matching
+    applies_to: [TokenMatchingClassifier, UMECClassifier]
+
+  - id: equipment_based.default_prominence
+    label: Default part→failure weight
+    description: "Fallback strength (0–1) when a part is not listed in the prominence table."
+    type: number
+    group: Equipment-based
+    min: 0
+    max: 1
+    step: 0.05
+    applies_to: [EquipmentBasedClassifier, UMECClassifier]
+
+  - id: semantic_similarity.embedding_dim
+    label: Embedding vector size
+    description: "Larger can capture more nuance but trains slower. 100 is a good default."
+    type: number
+    group: Semantic similarity
+    min: 50
+    max: 300
+    step: 10
+    applies_to: [SemanticSimilarityClassifier, UMECClassifier]
+
+  - id: semantic_similarity.window
+    label: Context window (words)
+    description: "How many neighbouring words FastText uses to learn each token."
+    type: number
+    group: Semantic similarity
+    min: 2
+    max: 15
+    step: 1
+    applies_to: [SemanticSimilarityClassifier, UMECClassifier]
+
+  - id: semantic_similarity.epochs
+    label: Training passes over text
+    description: "Increase (e.g. 8–12) if semantic model underfits; each extra epoch slows fit."
+    type: number
+    group: Semantic similarity
+    min: 1
+    max: 20
+    step: 1
+    applies_to: [SemanticSimilarityClassifier, UMECClassifier]
+
+  - id: semantic_similarity.cwem_augment
+    label: Duplicate rows with class keywords (CWEM)
+    description: "Adds synthetic training lines with keywords appended — can help rare classes; slower."
+    type: boolean
+    group: Semantic similarity
+    applies_to: [SemanticSimilarityClassifier, UMECClassifier]
+
+  - id: umec.decode.prior_weight
+    label: Class frequency bias in ensemble
+    description: >
+      0 = ignore how often each label appears in the upload; 1 = strongly favour frequent classes.
+      Lower values (0.2–0.4) often help balanced accuracy across rare labels.
+    type: number
+    group: UMEC ensemble
+    min: 0
+    max: 1
+    step: 0.05
+    applies_to: [UMECClassifier]
+
+  - id: umec.spectral.enabled
+    label: Use spectral features in ensemble
+    description: "Extra signal from score distributions across ECOC columns. Recommended ON."
+    type: boolean
+    group: UMEC ensemble
+    applies_to: [UMECClassifier]
+
+  - id: umec.spectral.components
+    label: Number of spectral components
+    description: "Only used when spectral aggregation is ON. 3 is typical; try 2–5 if tuning."
+    type: number
+    group: UMEC ensemble
+    min: 1
+    max: 10
+    step: 1
+    applies_to: [UMECClassifier]

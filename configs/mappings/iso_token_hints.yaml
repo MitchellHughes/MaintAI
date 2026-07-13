@@ -1,0 +1,57 @@
+# Optional SME-style seed terms from ISO Table 1 (paper §5.2).
+# Map your user-defined category labels (keys) to related tokens — not used automatically;
+# reference when editing keywords in the UI (e.g. leaking ← leakage, corroded ← corrosion).
+hints:
+  leaking:
+    - leakage
+    - leak
+    - leaking
+    - fluid
+    - hydraulic
+  corroded:
+    - corrosion
+    - corroded
+    - rust
+    - oxid
+  cracked:
+    - crack
+    - cracked
+    - fracture
+  worn:
+    - wear
+    - worn
+    - erosion
+    - eroded
+  damaged:
+    - damage
+    - broken
+    - bent
+    - deformed
+  vibration:
+    - vibration
+    - vibrate
+    - resonan
+  blocked:
+    - blockage
+    - blocked
+    - plugged
+    - obstruct
+  contaminated:
+    - contaminate
+    - contaminated
+    - dirty
+    - fouling
+  short:
+    - short circuit
+    - shorted
+    - burnt wire
+    - arcing
+  calibration:
+    - calibration
+    - calibrated
+    - faulty signal
+    - no signal
+  separated:
+    - delaminated
+    - delamination
+    - separation

@@ -1,0 +1,173 @@
+{
+    "corroded": [
+        "corr",
+        "corroded",
+        "corrosion",
+        "corrosion around",
+        "corrosion cabin",
+        "corrosion floor",
+        "corrosion level",
+        "corrosion was",
+        "corrosion task",
+        "heavy corrosion"
+    ],
+    "cracked": [
+        "crack",
+        "cracked",
+        "cracks",
+        "crack fuselage",
+        "crack hole",
+        "crack length",
+        "cracked frame",
+        "cracked shear plate",
+        "cracked replaced"
+    ],
+    "damaged": [
+        "bent",
+        "broken",
+        "damage",
+        "damaged",
+        "damaged area",
+        "damaged panel",
+        "deformed",
+        "elongated",
+        "gouge",
+        "gouged",
+        "hole",
+        "punctured",
+        "sheared",
+        "torn"
+    ],
+    "delaminated": [
+        "delaminated",
+        "delaminated area",
+        "delamination",
+        "delamination floor panel",
+        "panel delaminated"
+    ],
+    "leaking": [
+        "leak",
+        "leak check",
+        "leaking",
+        "leaking oil",
+        "leaks noted",
+        "saturated",
+        "case drain",
+        "hydraulic leak"
+    ],
+    "loose": [
+        "adjusted",
+        "adjustment",
+        "binding",
+        "detached",
+        "disconnected",
+        "excess play",
+        "loose",
+        "misinstalled",
+        "out of adjust",
+        "out of position",
+        "seized",
+        "sticking",
+        "unsecure"
+    ],
+    "low pressure": [
+        "accumulator low",
+        "bottle low",
+        "bottle pressure",
+        "low bottle",
+        "low pressure",
+        "low psi",
+        "pressure low"
+    ],
+    "odor": [
+        "dirty sock",
+        "dissipated",
+        "fume",
+        "fumes",
+        "odor",
+        "odor cabin",
+        "odor detected",
+        "odor noted",
+        "odors",
+        "smell"
+    ],
+    "worn": [
+        "chafed",
+        "lack of lube",
+        "vibration",
+        "wear",
+        "worn",
+        "worn out",
+        "worn seals"
+    ],
+    "faulty": [
+        "defective",
+        "failed",
+        "fault",
+        "fault displayed",
+        "fault message",
+        "faulted",
+        "faults noted",
+        "faulty",
+        "inoperative",
+        "intermittent",
+        "malfunctioned",
+        "unserviceable"
+    ],
+    "missing": [
+        "dislodged",
+        "fod",
+        "foreign object",
+        "missing",
+        "missing from",
+        "missing lens"
+    ],
+    "contaminated": [
+        "blocked",
+        "contaminated",
+        "contamination",
+        "decontamination",
+        "debris",
+        "dirty",
+        "foreign object",
+        "fouled",
+        "grease contamination",
+        "metal contamination",
+        "water contamination"
+    ],
+    "smoke": [
+        "burnt",
+        "cockpit smoke",
+        "electrical smoke",
+        "fire",
+        "galley smoke",
+        "haze",
+        "oven",
+        "smoke",
+        "smoky",
+        "smouldering"
+    ],
+    "deteriorated": [
+        "degraded",
+        "deteriorated",
+        "deterioration"
+    ],
+    "dirty": [
+        "clogged",
+        "dirty",
+        "obstructed"
+    ],
+    "discharged": [
+        "discharged",
+        "discharge"
+    ],
+    "false activation": [
+        "false activation",
+        "partial deploy",
+        "unwanted deploy"
+    ],
+    "no test": [
+        "no test",
+        "not tested"
+    ]
+}

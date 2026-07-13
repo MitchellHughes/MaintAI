@@ -1,0 +1,44 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    mem_limit: 10g
+    ports:
+      - "5050:5000"
+    expose:
+      - "5000"
+    volumes:
+      - .:/app
+      - unclassified_data:/app/unclassified
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+      - FLASK_USE_RELOADER=0
+      - UNCLASSIFIED_DIR=/app/unclassified
+      - MAINTAINER_HISTORY_DIR=/app/unclassified/history
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_PROXY_TARGET=http://backend:5000
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  unclassified_data:

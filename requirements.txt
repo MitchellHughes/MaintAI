@@ -1,0 +1,15 @@
+Flask
+flask-cors
+pandas
+numpy
+scipy
+scikit-learn
+gensim
+joblib
+tqdm
+matplotlib
+PyYAML
+pyarrow
+openpyxl
+xlrd
+wordfreq

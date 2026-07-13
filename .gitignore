@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.egg-info/
+.venv/
+
+# OS
+.DS_Store
+
+# --- Never commit datasets, exports, uploads, or run artifacts ---
+
+# Raw / processed maintenance data (keep empty dir placeholders only)
+data/*
+!data/raw/
+!data/processed/
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# CLI outputs & evaluation exports
+reports/*
+!reports/.gitkeep
+
+# Feedback / prediction history snapshots
+/history/
+
+# Server-side upload & async job storage (Docker volume)
+/unclassified/
+
+# Experiment outputs (notebooks may stay; data exports must not)
+experiments/*.csv
+experiments/*.xlsx
+experiments/*.xls
+experiments/*.parquet
+
+# Tabular / spreadsheet data anywhere in the repo
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.xlsm
+*.parquet
+*.feather
+
+# Allow versioned mapping configs (not customer records)
+!configs/mappings/*.json
+!configs/mappings/*.yaml
+
+# Demo / sample uploads in frontend
+frontend/public/*.csv
+frontend/public/*.xlsx
+
+# Trained model artifacts
+/models/
+
+# Compressed job results
+*.json.gz
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+*.docx
+
+# Local eval / debug reports
+report.txt

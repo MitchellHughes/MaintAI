@@ -1,0 +1,25 @@
+data:
+  path: data/raw/nlp.csv
+  format: csv
+  source_text_column: Discrepancy
+  source_label_column: PartCondition
+  text_column: processed_discrepancy
+  label_column: processed_partcondition_merged
+  required_columns:
+    - processed_discrepancy
+    - processed_partcondition_merged
+  preprocess:
+    enabled: true
+    lowercase: true
+    remove_non_alnum: true
+    collapse_spaces: true
+  read_kwargs:
+    low_memory: false
+  resources:
+    failure_keywords: configs/mappings/failure_keywords.json
+    token_mappings: configs/mappings/token_mappings.json
+    label_mappings: configs/mappings/label_mappings.json
+    part_keywords: configs/mappings/part_keywords.json
+    part_failure_prominence: configs/mappings/part_failure_prominence.json
+  output:
+    processed_path: data/processed/maintenance_records_processed.parquet

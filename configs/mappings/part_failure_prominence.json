@@ -1,0 +1,167 @@
+{
+  "bearing": {
+    "worn": 1.0,
+    "failed": 0.85,
+    "damaged": 0.6,
+    "loose": 0.5,
+    "cracked": 0.35,
+    "corroded": 0.3
+  },
+  "seal": {
+    "leaking": 1.0,
+    "worn": 0.8,
+    "damaged": 0.55,
+    "failed": 0.5,
+    "odor": 0.35
+  },
+  "valve": {
+    "leaking": 0.95,
+    "failed": 0.85,
+    "loose": 0.6,
+    "damaged": 0.5,
+    "low pressure": 0.7
+  },
+  "actuator": {
+    "failed": 0.95,
+    "damaged": 0.75,
+    "loose": 0.65,
+    "worn": 0.55,
+    "cracked": 0.35
+  },
+  "frame": {
+    "cracked": 0.95,
+    "corroded": 0.85,
+    "damaged": 0.7,
+    "delaminated": 0.5
+  },
+  "stringer": {
+    "corroded": 1.0,
+    "cracked": 0.9,
+    "damaged": 0.65,
+    "delaminated": 0.45
+  },
+  "skin": {
+    "corroded": 0.9,
+    "cracked": 0.85,
+    "damaged": 0.8,
+    "delaminated": 0.75,
+    "dent": 0.6
+  },
+  "door": {
+    "damaged": 0.9,
+    "cracked": 0.8,
+    "loose": 0.7,
+    "failed": 0.55,
+    "corroded": 0.45
+  },
+  "slat": {
+    "damaged": 0.85,
+    "cracked": 0.75,
+    "corroded": 0.6,
+    "loose": 0.5
+  },
+  "flap": {
+    "damaged": 0.85,
+    "cracked": 0.75,
+    "corroded": 0.55,
+    "loose": 0.5
+  },
+  "engine": {
+    "failed": 0.95,
+    "damaged": 0.75,
+    "leaking": 0.7,
+    "odor": 0.65,
+    "worn": 0.55
+  },
+  "apu": {
+    "failed": 0.9,
+    "odor": 0.8,
+    "leaking": 0.7,
+    "damaged": 0.6
+  },
+  "pack": {
+    "odor": 0.95,
+    "failed": 0.8,
+    "leaking": 0.75,
+    "low pressure": 0.85,
+    "damaged": 0.5
+  },
+  "duct": {
+    "leaking": 0.95,
+    "damaged": 0.7,
+    "loose": 0.55,
+    "corroded": 0.45
+  },
+  "wire": {
+    "damaged": 0.85,
+    "failed": 0.8,
+    "loose": 0.75,
+    "chafed": 0.7
+  },
+  "fitting": {
+    "cracked": 0.9,
+    "damaged": 0.85,
+    "corroded": 0.7,
+    "loose": 0.65
+  },
+  "fastener": {
+    "loose": 0.95,
+    "missing": 0.9,
+    "damaged": 0.7,
+    "corroded": 0.55
+  },
+  "beam": {
+    "cracked": 0.9,
+    "corroded": 0.85,
+    "damaged": 0.75,
+    "delaminated": 0.5
+  },
+  "rib": {
+    "cracked": 0.9,
+    "corroded": 0.8,
+    "damaged": 0.7
+  },
+  "landing_gear": {
+    "damaged": 0.85,
+    "worn": 0.8,
+    "failed": 0.75,
+    "leaking": 0.6,
+    "cracked": 0.55
+  },
+  "hydraulic": {
+    "leaking": 1.0,
+    "failed": 0.85,
+    "low pressure": 0.8,
+    "damaged": 0.55
+  },
+  "fuel": {
+    "leaking": 1.0,
+    "damaged": 0.7,
+    "corroded": 0.55,
+    "odor": 0.45
+  },
+  "avionics": {
+    "failed": 0.95,
+    "damaged": 0.7,
+    "loose": 0.55,
+    "missing": 0.5
+  },
+  "light": {
+    "failed": 0.9,
+    "missing": 0.85,
+    "damaged": 0.6,
+    "loose": 0.45
+  },
+  "filter": {
+    "clogged": 0.9,
+    "failed": 0.75,
+    "damaged": 0.6,
+    "leaking": 0.55
+  },
+  "motor": {
+    "failed": 0.95,
+    "worn": 0.8,
+    "damaged": 0.65,
+    "odor": 0.5
+  }
+}
