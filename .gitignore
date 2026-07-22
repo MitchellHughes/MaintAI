@@ -35,15 +35,6 @@ experiments/*.xlsx
 experiments/*.xls
 experiments/*.parquet
 
-# Tabular / spreadsheet data anywhere in the repo
-*.csv
-*.tsv
-*.xlsx
-*.xls
-*.xlsm
-*.parquet
-*.feather
-
 # Allow versioned mapping configs (not customer records)
 !configs/mappings/*.json
 !configs/mappings/*.yaml
