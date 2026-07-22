@@ -8,13 +8,15 @@ __pycache__/
 
 # --- Never commit datasets, exports, uploads, or run artifacts ---
 
-# Raw / processed maintenance data (keep empty dir placeholders only)
+# Raw / processed maintenance data (keep sample data only plus raw/processed placeholders)
 data/*
+!data/sample/
+!data/sample/**
 !data/raw/
 !data/processed/
 data/raw/*
-!data/raw/.gitkeep
 data/processed/*
+!data/raw/.gitkeep
 !data/processed/.gitkeep
 
 # CLI outputs & evaluation exports
